@@ -1,0 +1,63 @@
+﻿/* ==|== Forms 1.0.0 ============================================================
+   Author: James South - MetaDigital
+   ============================================================================== */
+
+form {
+    margin-top: 0;
+}
+
+/* horizontal */
+.form-horizon {
+    margin-bottom: 0;
+}
+    .form-horizon label {
+        float: left;
+        clear: left;
+        width: 160px;
+        overflow: hidden;
+        text-align: right;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .form-horizon input,
+    .form-horizon input[type="text"],
+    .form-horizon input[type="password"],
+    .form-horizon input[type="datetime"],
+    .form-horizon input[type="datetime-local"],
+    .form-horizon input[type="date"],
+    .form-horizon input[type="month"],
+    .form-horizon input[type="time"],
+    .form-horizon input[type="week"],
+    .form-horizon input[type="number"],
+    .form-horizon input[type="email"],
+    .form-horizon input[type="url"],
+    .form-horizon input[type="search"],
+    .form-horizon input[type="tel"],
+    .form-horizon input[type="color"],
+    .form-horizon select,
+    .form-horizon textarea,
+    .form-horizon .no-edit-input,
+    .form-horizon fieldset div,
+    .form-horizon p {
+        margin-left: 176px;
+        margin-bottom: 1em;
+    }
+
+.form-horizon .form-actions {
+    padding-left: 176px;
+}
+
+/* validation */
+.form-horizon span.error {
+    padding-left: 176px;
+}
+
+/* Actions */
+.form-actions {
+    white-space:nowrap;
+}

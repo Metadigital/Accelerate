@@ -1,0 +1,268 @@
+﻿/* ==|== Forms Base 1.0.0 =======================================================
+   Author: James South - MetaDigital
+   ============================================================================== */
+
+/* Margins */
+form {
+    margin-top: 1em;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 1em 0 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    font-size: 1.17em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ebebeb;
+}
+
+/* ie7 and ie8 put the padding above the legend */
+
+fieldset {
+    padding-top/*\**/: 0\9;
+}
+
+legend {
+    margin-bottom: 1em\9;
+}
+
+/* Normalize  */
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.no-edit-input {
+    font-family: inherit;
+    color: #666;
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #c0c0c0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.3s, box-shadow linear 0.3s;
+    -moz-transition: border linear 0.3s, box-shadow linear 0.3s;
+    -o-transition: border linear 0.3s, box-shadow linear 0.3s;
+    transition: border linear 0.3s, box-shadow linear 0.3s;
+}
+
+    /* focus */
+    textarea:focus,
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="date"]:focus,
+    input[type="month"]:focus,
+    input[type="time"]:focus,
+    input[type="week"]:focus,
+    input[type="number"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="color"]:focus,
+    input.focus,
+    textarea.focus,
+    .no-edit-input:focus {
+        border-color: #00a9ec;
+        border-color: rgba(0, 169, 236, 0.8);
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    }
+
+    /* disabled */
+    input[disabled],
+    select[disabled],
+    textarea[disabled],
+    input[readonly],
+    select[readonly],
+    textarea[readonly] {
+        cursor: not-allowed;
+        background-color: #ebebeb;
+        border-color: #c0c0c0;
+        color: #c0c0c0;
+    }
+
+/* Standard layout */
+
+form label,
+form input,
+form textarea,
+form select,
+form .no-edit-input,
+fieldset div {
+    display: block;
+    margin-left: 0;
+    margin-bottom: 1em;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea,
+.no-edit-input {
+    width: 210px;
+}
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        /* Might just move this further down the file */
+        display: inline-block!important;
+        margin: 3px 3px 3px 0!important;
+        width: 13px!important;
+    }
+
+/* both|horizontal|vertical|none */
+textarea {
+    height: auto;
+    resize: both;
+    min-height: 42px;
+}
+
+    textarea.horizon {
+        resize: horizontal;
+    }
+
+    textarea.vertical {
+        resize: vertical;
+    }
+
+    textarea.no-resize {
+        resize: none;
+    }
+
+.no-edit-input {
+    cursor: not-allowed;
+    border-color: #ebebeb;
+}
+
+select {
+    width: 220px;
+    border: 1px solid #c0c0c0;
+}
+
+    select[multiple],
+    select[size] {
+        height: auto;
+    }
+
+    select:focus,
+    input[type="file"]:focus,
+    input[type="radio"]:focus,
+    input[type="checkbox"]:focus {
+        border-color: #00a9ec;
+        border-color: rgba(0, 169, 236, 0.8);
+        outline: 0;
+        outline: 1px auto rgba(0, 169, 236, 0.2);
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    }
+
+
+/* placeholder : these have to be kept seperate*/
+::-webkit-input-placeholder {
+    color: #c0c0c0;
+}
+
+:-moz-placeholder {
+    color: #c0c0c0;
+}
+
+:-ms-input-placeholder {
+    color: #c0c0c0;
+}
+
+/* validation*/
+
+.validation-summary {
+    list-style: none;
+    -webkit-transition: opacity 0.15s linear;
+    -moz-transition: opacity 0.15s linear;
+    -o-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+
+    .validation-summary.error {
+        -moz-opacity: 1;
+        opacity: 1;
+    }
+
+textarea.error,
+input[type="text"].error,
+input[type="password"].error,
+input[type="datetime"].error,
+input[type="datetime-local"].error,
+input[type="date"].error,
+input[type="month"].error,
+input[type="time"].error,
+input[type="week"].error,
+input[type="number"].error,
+input[type="email"].error,
+input[type="url"].error,
+input[type="search"].error,
+input[type="tel"].error,
+input[type="color"].error,
+input[type="radio"].error,
+input[type="checkbox"].error,
+select.error {
+    background-color: #F4CAC8;
+    border-color: #EBA19E;
+}
+
+form span.error {
+    display: block;
+    margin-bottom: 1em;
+}
+
+/* Actions */
+.form-actions {
+    border-top: 1px solid #c0c0c0;
+    background: #f4f4f4;
+    background: -moz-linear-gradient(top, rgba(239,239,239,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,239,239,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(239,239,239,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
+    margin: 1em 0;
+    padding: 1em 1em 1em 0;
+    white-space:nowrap;
+}

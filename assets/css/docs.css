@@ -1,0 +1,35 @@
+/* ==|== Docs v1.0.0=========================================================
+   Author: James South - MetaDigital
+   Documentation specific styles.
+   ========================================================================== */
+
+.lt-ie9 .main-menu > li {
+    float: right;
+    padding-right: 0;
+    margin-left: 2em;
+}
+
+@media screen and (min-width: 768px) {
+    .main-menu > li {
+        float: right;
+        padding-right: 0;
+        margin-left: 2em;
+    }
+
+    .header {
+        padding-top: 22px;
+    }
+
+    .container > header {
+        padding-top: 20px;
+    }
+}
+
+.logo {
+    font-size: 4em;
+}
+
+.nav-list {
+    position: fixed;
+    padding-bottom: 150px;
+}

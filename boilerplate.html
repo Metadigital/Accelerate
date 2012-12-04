@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Accelerate is a fully responsive, lightweight, mobile-first css and javascript framework for rapidly developing websites." />
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- Old browsers -->
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="css/accelerate-legacy.css"/>
+        <link rel="stylesheet" href="assets/css/style.css" />
+    <![endif]-->
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome-ie7.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="css/accelerate.css" media="all and (min-width: 1em)" />
+    <link rel="stylesheet" href="assets/css/style-responsive.css" media="all and (min-width: 1em)" />
+    <!-- Fix html5 elements in < ie8 and add feature detection -->
+    <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+    <!-- http://mathiasbynens.be/notes/touch-icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57x57-precomposed">
+    <title>Accelerate | Boilerplate</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-inner">
+            <div class="container">
+                <div class="clmn2">
+                    <a href="index.html" class="brand italic">Accelerate</a>
+                </div>
+                <div class="clmn2">
+                    <ul class="main-menu">
+                        <li><a href="plugins.html">Plugins</a></li>
+                        <li><a href="boilerplate.html">Boilerplate</a></li>
+                        <li><a href="layout.html">Layout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">Boilerplate</h1>
+                <p class="lead">Building blocks to allow rapid development.</p>
+            </div>
+        </header>
+        <div class="container">
+            <article role="main">
+                <h1 class="page-header">Reusable componants <small>designed to provide base functionality</small></h1>
+                <p>Accelerate provides lots of building blocks that are specifically designed to speed up your development by boilerplating common componants from normalized styles to more complicated layouts we've done the work so you don't have to.</p>
+
+                <div class="row">
+                    <div class="clmn3-4">
+                        <section id="headings">
+                            <h1>Typography <small>Headings, paragraphs and other components</small></h1>
+                            <div class="row">
+                                <div class="clmn3">
+                                    <h3>Typography</h3>
+                                    <p>
+                                        All the type in Accelerate is em based so it can be scaled easily by changing the font size on the body. 
+                            This defaults to the browser standard of <strong>16px/1em.</strong> and has been used to define all margins and padding within the framework.
+                                    </p>
+                                </div>
+                                <div class="clmn3">
+                                    <h3>Sample text</h3>
+                                    <p>Leading text can be highlighted by adding the class <code class="language-css">.lead</code></p>
+                                    <p class="lead">This is some leading copy designed to stand out. </p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. 
+                                    </p>
+
+                                </div>
+                                <div class="clmn3 ">
+                                    <h3>Headings</h3>
+                                    <div class="headings-no-margin">
+                                        <p>Each heading style has a corresponding class to allow flexibility in styling.</p>
+                                        <h1>.h1 heading 1</h1>
+                                        <h2>.h2 heading 2</h2>
+                                        <h3>.h3 heading 3</h3>
+                                        <h4>.h4 heading 4</h4>
+                                        <h5>.h5 heading 5</h5>
+                                        <h6>.h6 heading 6</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <hr />
+                        <section id="lists">
+                            <h1>Lists <small>Common list types with progressive fallbacks</small></h1>
+                            <h2>Unordered List</h2>
+                            <p>For displaying lists of objects given in no defined order.</p>
+                            <p>Colored list style matches default in Internet Explorer 7.</p>
+                            <div class="row">
+                                <div class="clmn3">
+                                    <h3>default</h3>
+                                    <code class="language-markup">&lt;ul&gt;...&lt;/ul&gt;</code>
+                                    <ul>
+                                        <li>first</li>
+                                        <li>second</li>
+                                        <li>third
+                                <ul>
+                                    <li>alpha</li>
+                                    <li>beta</li>
+                                    <li>gamma</li>
+                                    <li>delta</li>
+                                </ul>
+                                        </li>
+                                        <li>fourth</li>
+                                    </ul>
+                                </div>
+                                <div class="clmn3">
+                                    <h3>no-bullets</h3>
+                                    <code class="language-markup">&lt;ul class="no-bullets"&gt;...&lt;/ul&gt;</code>
+                                    <ul class="no-bullets">
+                                        <li>first</li>
+                                        <li>second</li>
+                                        <li>third
+                                <ul>
+                                    <li>alpha</li>
+                                    <li>beta</li>
+                                    <li>gamma</li>
+                                    <li>delta</li>
+                                </ul>
+                                        </li>
+                                        <li>fourth</li>
+                                    </ul>
+                                </div>
+                                <div class="clmn3">
+                                    <h3>colored</h3>
+                                    <code class="language-markup">&lt;ul class="colored"&gt;...&lt;/ul&gt;</code>
+                                    <ul class="colored">
+                                        <li>first</li>
+                                        <li>second</li>
+                                        <li>third
+                                <ul>
+                                    <li>alpha</li>
+                                    <li>beta</li>
+                                    <li>gamma</li>
+                                    <li>delta</li>
+                                </ul>
+                                        </li>
+                                        <li>fourth</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h2>Ordered Lists</h2>
+                            <p>For displaying lists of objects given in no defined order.</p>
+                            <p>For listing items in a particular order. Coloured list style matches default in Internet Explorer 7.</p>
+                            <div class="row">
+                                <div class="clmn3">
+                                    <h3>default</h3>
+                                    <code class="language-markup">&lt;ol&gt;...&lt;/ol&gt;</code>
+                                    <ol>
+                                        <li>first</li>
+                                        <li>second</li>
+                                        <li>third
+                                <ol>
+                                    <li>alpha</li>
+                                    <li>beta</li>
+                                    <li>gamma</li>
+                                    <li>delta</li>
+                                </ol>
+                                        </li>
+                                        <li>fourth</li>
+                                        <li>fifth</li>
+                                        <li>sixth</li>
+                                        <li>seventh</li>
+                                        <li>eighth</li>
+                                        <li>ninth</li>
+                                        <li>tenth</li>
+                                    </ol>
+                                </div>
+                                <div class="clmn3">
+                                    <h3>no-bullets</h3>
+                                    <code class="language-markup">&lt;ol class="no-bullets"&gt;...&lt;/ol&gt;</code>
+                                    <ol class="no-bullets">
+                                        <li>first</li>
+                                        <li>second</li>
+                                        <li>third
+                                <ol>
+                                    <li>alpha</li>
+                                    <li>beta</li>
+                                    <li>gamma</li>
+                                    <li>delta</li>
+                                </ol>
+                                        </li>
+                                        <li>fourth</li>
+                                        <li>fifth</li>
+                                        <li>sixth</li>
+                                        <li>seventh</li>
+                                        <li>eighth</li>
+                                        <li>ninth</li>
+                                        <li>tenth</li>
+                                    </ol>
+                                </div>
+                                <div class="clmn3">
+                                    <h3>colored</h3>
+                                    <code class="language-markup">&lt;ol class="colored"&gt;...&lt;/ol&gt;</code>
+                                    <ol class="colored">
+                                        <li>first</li>
+                                        <li>second</li>
+                                        <li>third
+                                <ol>
+                                    <li>alpha</li>
+                                    <li>beta</li>
+                                    <li>gamma</li>
+                                    <li>delta</li>
+                                </ol>
+                                        </li>
+                                        <li>fourth</li>
+                                        <li>fifth</li>
+                                        <li>sixth</li>
+                                        <li>seventh</li>
+                                        <li>eighth</li>
+                                        <li>ninth</li>
+                                        <li>tenth</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <h2>Description Lists</h2>
+                            <p>For displaying lists containing groups of terms and their definitions.</p>
+                            <div class="row">
+                                <div class="clmn3">
+                                    <h3>default</h3>
+                                    <code class="language-markup">&lt;dl&gt;...&lt;/dl&gt;</code>
+                                    <dl>
+                                        <dt>Description list</dt>
+                                        <dd>A group of terms and their definitions.</dd>
+                                        <dt>Name of the term</dt>
+                                        <dd>Description of the term.</dd>
+                                        <dd>Secondary description of the term.</dd>
+                                        <dt>Name of the term</dt>
+                                        <dd>Description of the term with lots of copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae nibh justo. Integer a ligula vel enim ultricies mollis ut ac tortor.</dd>
+                                    </dl>
+                                </div>
+                                <div class="clmn2-3">
+                                    <h3>horizontal</h3>
+                                    <code class="language-markup">&lt;dl class="dl-horizon"&gt;...&lt;/dl&gt;</code>
+                                    <dl class="dl-horizon">
+                                        <dt>Description list</dt>
+                                        <dd>A group of terms and their definitions.</dd>
+                                        <dt>
+                                            <label for="test-textbox">Name of the term longer than expected</label></dt>
+                                        <dd>Description of the term with lots of copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae nibh justo. 
+                            Integer a ligula vel enim ultricies mollis ut ac tortor.</dd>
+                                        <dd>
+                                            <input type="text" id="test-textbox" placeholder="testing textbox" /></dd>
+                                        <dt>Name of the term to check wrapping</dt>
+                                        <dd>Description of the term with lots of copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae nibh justo. 
+                            Integer a ligula vel enim ultricies mollis ut ac tortor.</dd>
+                                    </dl>
+                                    <p>
+                                        <strong>Testing following copy after dl-horizon</strong>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae nibh justo. 
+                            Integer a ligula vel enim ultricies mollis ut ac tortor. Mauris lacus urna, ornare et venenatis ut, fringilla a justo. 
+                            Suspendisse potenti. Cras sed pharetra diam. Mauris scelerisque sem sed libero porttitor sodales. Curabitur sagittis nisl a 
+                            ligula facilisis lacinia. Aliquam dui est, posuere ac suscipit in, volutpat eu odio. Nunc placerat, arcu a pharetra vulputate, 
+                            justo justo gravida enim, et egestas augue elit eget enim. In hac habitasse platea dictumst. Cum sociis natoque penatibus et
+                            magnis dis parturient montes, nascetur ridiculus mus. Sed sed eros diam.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <hr />
+                        <section id="forms">
+                            <h1>Forms <small>Cross browser normalized forms</small></h1>
+
+                            <h3>Layout</h3>
+
+                            <div class="row">
+                                <div class="clmn2">
+                                    <form action="#">
+                                    <fieldset>
+                                        <legend>Default Form</legend>
+                                        <label for="input-focused1">Focused</label>
+                                        <input type="text" id="input-focused1" class="focus" value="focused input..." />
+                                        <label for="input-disabled1">Disabled</label>
+                                        <input type="text" id="input-disabled1" disabled value="disabled input..." />
+                                        <p>Support text to help describe the input.</p>
+                                        <label for="input-no-edit1">Non editable</label>
+                                        <span id="input-no-edit1" class="no-edit-input">non editable</span>
+                                        <label for="select-default1">Select</label>
+                                        <select id="select-default1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                        <label for="input-file1">File upload</label>
+                                        <input id="input-file1" type="file" />
+                                        <label for="check-disabled1">Disabled Checkbox</label>
+                                        <div>
+                                            <input type="checkbox" id="check-disabled1" value="option1" disabled="">
+                                        </div>
+                                        <label for="default-textarea1">Textarea</label>
+                                        <textarea id="default-textarea1"></textarea>
+                                    </fieldset>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-prime">Save changes</button>
+                                        <button class="btn">Cancel</button>
+                                    </div>
+                                    </form>
+                                </div>
+                                <div class="clmn2">
+                                    <form action="#" class="form-horizon">
+                                    <fieldset>
+                                        <legend>Horizontal Form</legend>
+                                        <label for="input-focused2">Focused</label>
+                                        <input type="text" id="input-focused2" class="focus" value="focused input..." />
+                                        <label for="input-disabled2">Disabled</label>
+                                        <input type="text" id="input-disabled2" disabled value="disabled input..." />
+                                        <p>Support text to help describe the input.</p>
+                                        <label for="input-no-edit2">Non editable</label>
+                                        <span id="input-no-edit2" class="no-edit-input">non editable</span>
+                                        <label for="select-default2">Select</label>
+                                        <select id="select-default2">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                        <label for="input-file2">File upload</label>
+                                        <input id="input-file2" type="file" />
+                                        <label for="check-disabled2">Disabled Checkbox</label>
+                                        <div>
+                                            <input type="checkbox" id="check-disabled2" value="option2" disabled="">
+                                        </div>
+                                        <label for="default-textarea2">Textarea</label>
+                                        <textarea id="default-textarea2"></textarea>
+                                    </fieldset>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-prime">Save changes</button>
+                                        <button class="btn">Cancel</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                        <hr />
+                        <section id="tables">
+                            <h1>Tables <small>For displaying tabular data.</small></h1>
+                            <h3>Default</h3>
+                            <table class="table">
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Data</td>
+                                        <td>Data</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Data</td>
+                                        <td>Data</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Data</td>
+                                        <td>Data</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <h3>Bordered</h3>
+                            <table class="table table-bordered">
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Data</td>
+                                        <td>Data</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Data</td>
+                                        <td>Data</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Data</td>
+                                        <td>Data</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <h3>Striped</h3>
+                            <table class="table table-striped">
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Data</td>
+                                        <td>Data</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Data</td>
+                                        <td>Data</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Data</td>
+                                        <td>Data</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </section>
+                        <hr />
+                        <section id="alerts">
+                            <h1>Alerts <small>Semantically designed feedback for your users</small></h1>
+                            <div class="alert alert-block">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <h4 class="alert-heading">Alert block</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p>Phasellus vitae nibh justo. Integer a ligula vel enim ultricies mollis ut ac tortor.</p>
+                            </div>
+
+                            <div class="alert alert-success">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <strong>Success</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+
+                            <div class="alert alert-warning">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <strong>Warning</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+
+                            <div class="alert alert-error">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <strong>Error</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+
+                            <div class="alert alert-info">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <strong>Info</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+
+                        </section>
+                        <hr />
+                        <section id="code">
+                            <h1>Code <small>Normalized code segments for displaying samples.</small></h1>
+                            <pre class="language-css"><code class="language-css">
+/**
+ * Test CSS
+ *
+ */
+pre {
+    font-weight: normal;
+    font-family: consolas,monospace,serif;
+    background-color: #272822;
+    color: #d8f8f2;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+                     </code></pre>
+                        </section>
+                    </div>
+                    <div class="clmn4 side-nav">
+                        <ul class="nav-list">
+                            <li><a href="boilerplate.html#headings">Headings</a></li>
+                            <li><a href="boilerplate.html#lists">Lists</a></li>
+                            <li><a href="boilerplate.html#forms">Forms</a></li>
+                            <li><a href="boilerplate.html#tables">Tables</a></li>
+                            <li><a href="boilerplate.html#alerts">Alerts</a></li>
+                            <li><a href="boilerplate.html#code">Code</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="clmn3-5">
+                <p>
+                    <strong class="italic">Accelerate</strong> is responsive web design boilerplate built by <a href="http://metadigital.co.uk/" rel="external" target="_blank">Metadigital</a>
+                </p>
+                <p>Excerpts of this code are based on the incredibly hard work by the good people at <a href="http://html5boilerplate.com/" rel="external" target="_blank">HTML5 Boilerplate</a>, and <a href="http://twitter.github.com/bootstrap/" rel="external" target="_blank">Twitter Bootstrap</a>. Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" rel="external" target="_blank">Apache License, Version 2.0</a>.</p>
+                <p>Icons provided by <a href="http://fortawesome.github.com/Font-Awesome/" rel="external" target="_blank">Font Awesome</a></p>
+            </div>
+            <div class="clmn5 offset5"><a class="btn" href="#" rel="up"><i class="icon-l icon-chevron-up"></i>Back to the top</a></div>
+        </div>
+    </footer>
+    <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.1.js"><\/script>')</script>
+    <!-- Plugins would normaliy be concatinated and minified -->
+    <script src="js/plugins/accelerate.featuretests.js"></script>
+    <script src="js/plugins/accelerate.accordion.js"></script>
+    <script src="js/plugins/accelerate.overlay.js"></script>
+    <script src="js/plugins/accelerate.googlemap.js"></script>
+    <script src="js/plugins/accelerate.carousel.js"></script>
+    <script src="js/plugins/accelerate.autosize.js"></script>
+    <script src="js/plugins/accelerate.tabs.js"></script>
+    <script src="js/plugins/accelerate.dismiss.js"></script>
+
+    <!-- A fix for the iOS orientationchange zoom bug -->
+    <script src="js/vendor/ios-orientationchange-fix.js"></script>
+
+    <!-- Load site specifi scripts. -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

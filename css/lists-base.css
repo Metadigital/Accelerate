@@ -1,0 +1,75 @@
+﻿/* ==|== Lists Base 1.0.0 =======================================================
+   Author: James South - MetaDigital
+   ============================================================================== */
+
+/* Unordered and ordered lists */
+
+ul.no-bullets,
+ol.no-bullets {
+    padding-left: 0;
+}
+
+    ul.no-bullets > li,
+    ol.no-bullets > li {
+        list-style: none;
+    }
+
+/* Coloured links */
+ul.colored, ol.colored {
+    padding-left: 40px;
+}
+
+    ul.colored > li, ol.colored > li {
+        list-style-type: none;
+        position: relative;
+    }
+
+        ul.colored > li:before, ol.colored > li:before {
+            content: "\25CF"; /*escaped unicode coloured circle*/
+            color: #00A9EC; /*Edit this property to change all colored class lists*/
+            font-weight: bold;
+            font-size: 1em;
+            text-align: right;
+            position: absolute;
+            left: -16px;
+            top: 0;
+            text-decoration: none;
+            -webkit-margin-start: -4px;
+        }
+
+ol.colored {
+    counter-reset: foo;
+}
+
+    ol.colored > li {
+        counter-increment: foo;
+    }
+
+        ol.colored > li:before {
+            content: counter(foo)"."; /*the counter value*/
+            left: -50px;
+            font-weight: normal;
+            width: 40px;
+            -webkit-margin-start: 0;
+        }
+
+
+/* ie7 fallback */
+ul.colored,
+ol.colored {
+    *padding-left: 40px;
+}
+
+    ul.colored > li,
+    ol.colored > li {
+        *position: static;
+        *padding-left: 0;
+    }
+
+    ul.colored > li {
+        *list-style-type: disc;
+    }
+
+    ol.colored > li {
+        *list-style-type: decimal;
+    }

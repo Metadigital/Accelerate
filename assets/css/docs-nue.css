@@ -1,0 +1,37 @@
+﻿body {
+    color: #222;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.header {
+    padding-top: 1em;
+}
+
+.logo {
+    font-size: 4em;
+    margin: 0;
+}
+
+.page-footer {
+    height: 129px;
+    padding-top: 20px;
+    border-top: 1px solid #c0c0c0;
+    background: #f6f5f5;
+}
+
+/*Remember to chop these out*/
+.blue {
+    background-color: #00a1f1;
+}
+
+.red {
+    background-color: #f65314;
+}
+
+.green {
+    background-color: #7cbb00;
+}
+
+.orange {
+    background-color: #fb0;
+}

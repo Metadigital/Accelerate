@@ -1,0 +1,70 @@
+/* ==|== Tables 1.0.0 ===========================================================
+   Author: James South - MetaDigital
+   ============================================================================== */
+
+/* Make it responsive*/
+table {
+    max-width: 100%;
+}
+
+/* Defaults */
+.table {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+    .table th, .table td {
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+        border-top: 1px solid #c0c0c0;
+    }
+
+/* bordered tables */
+.table-bordered {
+    border-collapse: separate;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: solid 1px #c0c0c0;
+    border-left-width: 0;
+}
+
+/*ie7*/
+.table-bordered {
+    *border-collapse: collapse;
+}
+
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {
+    border-top-width: 0;
+}
+
+    .table-bordered thead:first-child tr:first-child th:first-child,
+    .table-bordered tbody:first-child tr:first-child td:first-child {
+        -webkit-border-top-left-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+
+    .table-bordered thead:first-child tr:first-child th:last-child,
+    .table-bordered tbody:first-child tr:first-child td:last-child {
+        -webkit-border-top-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+.table-bordered th,
+.table-bordered td {
+    border-left: 1px solid #c0c0c0;
+}
+
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: #ebebeb;
+}
+
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+  background-color: #f6f6f6;
+}

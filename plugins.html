@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Accelerate is a fully responsive, lightweight, mobile-first css and javascript framework for rapidly developing websites." />
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- Old browsers -->
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="css/accelerate-legacy.css"/>
+        <link rel="stylesheet" href="assets/css/style.css" />
+    <![endif]-->
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome-ie7.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="css/accelerate.css" media="all and (min-width: 1em)" />
+    <link rel="stylesheet" href="assets/css/style-responsive.css" media="all and (min-width: 1em)" />
+    <!-- Fix html5 elements in < ie8 and add feature detection -->
+    <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+    <!-- http://mathiasbynens.be/notes/touch-icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57x57-precomposed">
+    <title>Accelerate | Plugins</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-inner">
+            <div class="container">
+                <div class="clmn2">
+                    <a href="index.html" class="brand italic">Accelerate</a>
+                </div>
+                <div class="clmn2">
+                    <ul class="main-menu">
+                        <li><a href="plugins.html">Plugins</a></li>
+                        <li><a href="boilerplate.html">Boilerplate</a></li>
+                        <li><a href="layout.html">Layout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">Plugins</h1>
+                <p class="lead">
+                    Responsive JavaScript plugins to provide extended functionality.
+                </p>
+            </div>
+        </header>
+        <div class="container">
+            <article role="main">
+                <h1 class="page-header">jQuery Plugins <small>designed to perform common tasks.</small></h1>
+                <div class="row">
+                    <div class="clmn4">
+                        <h3><a href="#accordion">Accordion</a></h3>
+                        <p>Simple css styles and behaviour for flexible collapsable regions.</p>
+                    </div>
+                    <div class="clmn4">
+                        <h3><a href="#overlay">Overlay</a></h3>
+                        <p>A flexible mobile overlay with general and crosshair focusing.</p>
+                    </div>
+                    <div class="clmn4">
+                        <h3><a href="#googlemap">Google Map</a></h3>
+                        <p>A simple, extensible, plugin for adding google map instances to your website.</p>
+                    </div>
+                    <div class="clmn4">
+                        <h3><a href="#carousel">Carousel</a></h3>
+                        <p>A carousel for displaying media type that comes in two flavours.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="clmn4 ">
+                        <h3><a href="#autosize">Autosize</a></h3>
+                        <p>A plugin that allows textareas to automagically grow or shrink to fit their content.</p>
+                    </div>
+                    <div class="clmn4">
+                        <h3><a href="#tabs">Tabs</a></h3>
+                        <p>Responsive tab panels for organizing content.</p>
+                    </div>
+                    <div class="clmn4">
+                        <h3><a href="#dismiss">Dismiss</a></h3>
+                        <p>Adds the ability to hide any content on click.</p>
+                    </div>
+                </div>
+                <h3>Philosphy</h3>
+                <p>All plugins follow very simple but strict design guidlines which help to keep the library lightweight and easy to use. </p>
+                <h4>Data-Attribute API</h4>
+                <p>All the plugins provided by Accelerate are designed so that they can run out of the box without writing a single line of code. This makes it easier to rapidly add common basic functionality to your website with minimum effort as the plugins broadcast their various events in a namespaced event system.</p>
+                <p>Whilst this is appropriate for most websites, sometimes developers need to tweak the initialisation code to their needs so each plugins default behaviour can be disabled by unbinding all events on the document body like this:</p>
+                <pre class="language-javascript"><code class="language-javascript">
+// Target and disable all plugins.
+$(document.body).off(".accelerate");
+
+// Target and disable a specific plugin.
+$(document.body).off("carousel.accelerate");
+
+// Listen for and act upon a plugins exposed event.
+$(document.body).on("slid.carousel.accelerate", "[data-carousel]", function (){
+       
+    // Run an event on the slid event.
+                         
+});
+                 </code></pre>
+                <h4>Programatic API</h4>
+                <p>All the plugins providede by Accelerate can also be used through the standard jQuery API.</p>
+                <p>All the plugins are chainable, returning the collection that has been acted upon. All the plugin methods also accept an options object containing options that override the plugin defaults, a string calling a specific method or can be initialised parameterless to run with default behaviour:</p>
+                <pre class="language-javascript"><code class="language-javascript">
+// Chain the plugin method.
+$(".overlay").overlay().addClass("foo");
+
+// Initiaze the method with the different patterns.
+$(".overlay").overlay() // default
+$(".overlay").overlay({crosshair:true}) // add crosshair focusing
+$(".overlay").overlay("show") // initialize and invoke the show moethod.
+ </code></pre>
+                <hr />
+                <section id="accordion">
+                    <h1>Accordion <small>accelerate.accordion.js</small></h1>
+                    <div class="row">
+                        <div class="clmn3">
+                            <h3>About
+                            </h3>
+                            <p>
+                                The accordion plugin defines styles and behaviour to create collapsable regions
+                            in your webpage. By default the regions are independant of each other but can be
+                            configured to behave as part of a group.
+                            </p>
+                            <p>
+                                Wrap the accordion in a parent div and add the option <code class="language-javascript">"parent":"#selector"</code>
+                                to the plugin to add grouping.
+                            </p>
+                        </div>
+                        <div class="clmn2-3">
+                            <h3>Default behaviour</h3>
+                            <div class="acc">
+                                <div class="acc-head" data-accordion='{"target":"#cllps1"}'>
+                                    Accordion group item 1
+                                </div>
+                                <div id="cllps1" class="acc-body cllps xpnd">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="acc">
+                                <div class="acc-head" data-accordion='{"target":"#cllps2"}'>
+                                    Accordion group item 2
+                                </div>
+                                <div id="cllps2" class="acc-body cllps">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="acc">
+                                <div class="acc-head" data-accordion='{"target":"#cllps3"}'>
+                                    Accordion group item 3
+                                </div>
+                                <div id="cllps3" class="acc-body cllps">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </div>
+                            <h4>Grouped</h4>
+                            <div id="acc-parent">
+                                <div class="acc">
+                                    <div class="acc-head" data-accordion='{"target":"#cllps4","parent":"#acc-parent"}'>
+                                        Accordion group item 1
+                                    </div>
+                                    <div id="cllps4" class="acc-body cllps xpnd">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="acc">
+                                    <div class="acc-head" data-accordion='{"target":"#cllps5","parent":"#acc-parent"}'>
+                                        Accordion group item 2
+                                    </div>
+                                    <div id="cllps5" class="acc-body cllps">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="acc">
+                                    <div class="acc-head" data-accordion='{"target":"#cllps6","parent":"#acc-parent"}'>
+                                        Accordion group item 3
+                                    </div>
+                                    <div id="cllps6" class="acc-body cllps">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3>Markup</h3>
+                            <pre class="language-markup"><code class="language-markup">
+&lt;div class="acc"&gt;
+    &lt;div class="acc-head" data-accordion='{"target":"#cllps1"}'&gt;
+        Accordion group item 1
+    &lt;/div&gt;
+    &lt;div id="cllps1" class="acc-body cllps xpnd"&gt;
+        ....
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code></pre>
+                            <h3>Methods</h3>
+                            <dl>
+                                <dt><strong>.accordion(options)</strong>  </dt>
+                                <dd>Initialises the plugin with an optional options <code class="language-javascript">object</code></dd>
+                                <dt><strong>.accordion("show")</strong></dt>
+                                <dd>Shows a collapsed accordion element. </dd>
+
+                                <dt><strong>.accordion("hide")</strong></dt>
+                                <dd>Hides a collapsed accordion element. </dd>
+
+                                <dt><strong>.accordion("toggle")</strong></dt>
+                                <dd>Toggles the visibilty of a collapsed accordion element. </dd>
+
+                            </dl>
+                            <h3>Events</h3>
+                            <p>The Accordion plugin exposes the folowing events that allow you to hook into its  behaviour.</p>
+                            <dl class="dl-horizon">
+                                <dt><strong>show.accordion</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">show</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>shown.accordion</strong></dt>
+                                <dd>This event is fired once the collapsed region of the given instance has been made visible to the user.
+                                </dd>
+                                <dt><strong>hide.accordion</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">hide</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>hidden.accordion</strong></dt>
+                                <dd>This event is fired once the collapsed region of the given instance has been hidden from the user
+                                </dd>
+                            </dl>
+                            <pre class="language-javascript"><code class="language-javascript">
+ 
+// Bind to the shown event.
+$("#myAccordion").on("shown.accordion.accelerate", function() {
+    // ...
+});
+                        </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <section id="overlay">
+                    <h1>Overlay <small>accelerate.overlay.js</small></h1>
+                    <div class="row">
+                        <div class="clmn3">
+                            <h3>About
+                            </h3>
+                            <p>
+                                The overlay plugin provides a simple way to add modal overlays to display content
+                            on your website. The plugin is fully responsive and can be configured for content
+                            from both external and internal sources and also for fixed and absolute positioning.
+                            </p>
+                        </div>
+                        <div class="clmn2-3">
+                            <h4>Relatively loaded target</h4>
+                            <a href="boilerplate.html #tables" data-overlay='{"header":"Relative url"}'>Launch relative overlay</a>
+                            <h4>External target with iframe header and footer</h4>
+                            <a href="http://www.telegraph.co.uk/" data-overlay='{"header":"Telegraph","footer":"<p>sample text for the footer.</p>"}'>Launch external overlay</a>
+                            <h4>External target with iframe header and footer and scrollbars</h4>
+                            <a href="http://bbc.co.uk" data-overlay='{"header":"bbc","footer":"<p>sample text for the footer.</p>", "iframeScroll":true}'>Launch external overlay</a>
+                            <h4>Internal target</h4>
+                            <a href="#overlay1" data-overlay="">Launch internal overlay</a>
+                            <div id="overlay1" class="hidden">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                deserunt mollit anim id est laborum.
+                                </p>
+                            </div>
+                            <h4>Internal target with header and footer</h4>
+                            <a href="#overlay2" data-overlay='{"header":"internal header","footer":"<p>sample text for the footer.</p>"}'>Launch internal overlay</a>
+                            <div id="overlay2" class="hidden">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                deserunt mollit anim id est laborum.
+                                </p>
+                            </div>
+                            <h4>Internal target with crosshair focusing</h4>
+                            <a href="#overlay3" data-overlay='{"crosshair":true}'>Launch internal
+                            overlay</a>
+                            <div id="overlay3" class="hidden">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                deserunt mollit anim id est laborum.
+                                </p>
+                            </div>
+                            <h3>Markup</h3>
+                            <pre class="language-markup"><code class="language-markup">
+&lt;!-- Launch an external overlay containing a title --&gt;
+&lt;a href="http://www.telegraph.co.uk/" data-overlay='{"header": "Telegraph"}'&gt;
+    telegraph
+&lt;/a&gt;
+                        </code></pre>
+                            <h3>Methods</h3>
+                            <dl class="dl-horizon">
+                                <dt><strong>.overlay(options)</strong>  </dt>
+                                <dd>Initialises the plugin with an optional options <code class="language-javascript">object</code></dd>
+                                <dt><strong>.overlay("show")</strong></dt>
+                                <dd>Shows a modal window. </dd>
+
+                                <dt><strong>.overlay("hide")</strong></dt>
+                                <dd>Hides a model window. </dd>
+
+                                <dt><strong>.overlay("toggle")</strong></dt>
+                                <dd>Toggles the visibilty of a modal window. </dd>
+
+                            </dl>
+                            <h3>Events</h3>
+                            <p>The Overlay plugin exposes the folowing events that allow you to hook into its  behaviour.</p>
+                            <dl class="dl-horizon">
+                                <dt><strong>show.overlay</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">show</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>shown.overlay</strong></dt>
+                                <dd>This event is fired once the collapsed region of the given instance has been made visible to the user.
+                                </dd>
+                                <dt><strong>hide.overlay</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">hide</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>hidden.overlay</strong></dt>
+                                <dd>This event is fired once the collapsed region of the given instance has been hidden from the user
+                                </dd>
+                            </dl>
+                            <pre class="language-javascript"><code class="language-javascript">
+ 
+// Bind to the hidden event.
+$("#myOverlay").on("hidden.overlay.accelerate", function() {
+    // ...
+});
+                        </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <section id="googlemap">
+                    <h1>Google Map <small>accelerate.googlemap.js</small></h1>
+                    <div class="row">
+                        <div class="clmn3">
+                            <h3>About</h3>
+                            <p>The google maps plugin renders an instance of a map containing a single marker. The map is fully responsive and the marker is also customizable.</p>
+                        </div>
+                        <div class="clmn2-3">
+                            <h4>Default Layout</h4>
+                            <div id="google-map" data-googlemap='{"center":{"lat":55.86290,"lng":-4.251755},"marker":{"title":"custom title"}}'>
+                            </div>
+                            <h4>Custom marker icon</h4>
+                            <div id="google-map2" data-googlemap='{"center":{"lat":55.86290,"lng":-4.251755},"marker":{"title":"custom title and icon","icon":"http://metadigital.co.uk/images/metaGoogleMapMarker.png"}}'>
+                            </div>
+                            <h3>Markup</h3>
+                            <pre class="language-markup"><code class="language-markup">
+&lt;!-- Launch a google map with a centre point --&gt;
+&lt;div id="google-map" data-googlemap='{"center":{"lat":55.86290,"lng":-4.251755}}'&gt;
+        
+&lt;/div&gt;
+                        </code></pre>
+                            <h3>Methods</h3>
+                            <dl>
+                                <dt><strong>.googlemap(options)</strong>  </dt>
+                                <dd>Initialises the plugin with an optional options <code class="language-javascript">object</code></dd>
+                                <dt><strong>.googlemap("show")</strong></dt>
+                                <dd>Shows the current google map instance. </dd>
+
+                                <dt><strong>.googlemap("resize")</strong></dt>
+                                <dd>Triggers the resize event of the map instance. </dd>
+                            </dl>
+                            <h3>Events</h3>
+                            <p>The GoogleMap plugin exposes the folowing events that allow you to hook into its  behaviour.</p>
+                            <dl class="dl-horizon">
+                                <dt><strong>show.googlemap</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">show</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>shown.googlemap</strong></dt>
+                                <dd>This event is fired once the collapsed region of the given instance has been made visible to the user.
+                                </dd>
+                                <dt><strong>resize.googlemap</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">resize</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>resized.googlemap</strong></dt>
+                                <dd>This event is fired once the given instance has been resized.
+                                </dd>
+                            </dl>
+                            <h3>Notes</h3>
+                            <p>Since the Google Map plugin is initialised on page load the code required to disable the built in start up functionality of the plugin is slightly different.</p>
+                            <pre class="language-javascript"><code class="language-javascript">
+ 
+// UnBind the built in loading event.
+$(window).unbind("load.googlemap.accelerate");
+
+// UnBind the built in resize event.
+$(window).unbind("resize.googlemap.accelerate");
+
+// Extending the map functionality
+$(document.body).on("shown.googlemap.accelerate", "#google-map", function (event) {
+      
+    // Get the map and it's default marker
+    var data = $(this).data("map"),
+        map = data.map,
+        marker = data.markers[0],
+
+        // Create an infowindow.
+        infowindow = new google.maps.InfoWindow({
+        content: "This is a test."
+    });
+
+    // Bind the click event.
+    google.maps.event.addListener(marker, "click", function () {
+        infowindow.open(map, marker);
+    });
+
+});
+                        </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <section id="carousel">
+                    <h1>Carousel <small>accelerate.carousel.js</small></h1>
+                    <div class="row">
+                        <div class="clmn3">
+                            <h3>About</h3>
+                            <p>The carousel.</p>
+                        </div>
+                        <div class="clmn2-3">
+                            <h3>Slide Mode</h3>
+                            <div id="carousel1" class="carousel carousel-slide" data-carousel="">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item carousel-active">
+                                        <img src="assets/img/hydrangeas.jpg" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>First Thumbnail label</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/chrysanthemum.jpg" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>Second Thumbnail label</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/desert.jpg" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>Third Thumbnail label</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#" data-carousel-slide="prev">&lt;</a>
+                                <a class="right carousel-control" href="#" data-carousel-slide="next">&gt;</a>
+                            </div>
+
+                            <h3>Fade Mode</h3>
+                            <div id="carousel2" class="carousel carousel-fade" data-carousel="">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item carousel-active">
+                                        <img src="assets/img/hydrangeas.jpg" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>First Thumbnail label</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/chrysanthemum.jpg" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>Second Thumbnail label</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/img/desert.jpg" alt="">
+                                        <div class="carousel-caption">
+                                            <h4>Third Thumbnail label</h4>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#" data-carousel-slide="prev">&lt;</a>
+                                <a class="right carousel-control" href="#" data-carousel-slide="next">&gt;</a>
+                            </div>
+                            <h3>Markup</h3>
+                            <pre class="language-markup"><code class="language-markup">
+&lt;div id="myCarousel" class="carousel carousel-slide" data-carousel=""&gt;
+    &lt;!-- Carousel items --&gt;
+    &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-active carousel-item"&gt;...&lt;/div&gt;
+    &lt;div class="carousel-item"&gt;...&lt;/div&gt;
+    &lt;div class="carousel-item"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Carousel navigation --&gt;
+    &lt;a class="carousel-control left" href="#" data-carousel-slide="prev"&gt;&amp;lsaquo;&lt;/a&gt;
+    &lt;a class="carousel-control right" href="#" data-carousel-slide="next"&gt;&amp;rsaquo;&lt;/a&gt;
+&lt;/div&gt;
+                        </code></pre>
+                            <h3>Methods</h3>
+                            <dl class="dl-horizon">
+                                <dt><strong>.carousel(options)</strong>  </dt>
+                                <dd>Initialises the plugin with an optional options <code class="language-javascript">object</code></dd>
+                                <dt><strong>.carousel("cycle")</strong></dt>
+                                <dd>Cycles throught the carousel instance items in a logical order.</dd>
+                                <dt><strong>.carousel("pause")</strong></dt>
+                                <dd>Triggers the pause event of the carousel instance stopping it cycling. </dd>
+                                <dt><strong>.carousel("prev")</strong></dt>
+                                <dd>Cycles the carousel instance to the previous item. </dd>
+                                <dt><strong>.carousel("next")</strong></dt>
+                                <dd>Cycles the carousel instance to the next item. </dd>
+                                <dt><strong>.carousel(number)</strong></dt>
+                                <dd>Cycles the carousel to a particular item.</dd>
+                            </dl>
+                            <h3>Events</h3>
+                            <p>The carousel plugin exposes the folowing events that allow you to hook into its behaviour.</p>
+                            <dl class="dl-horizon">
+                                <dt><strong>slide.carousel</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">slide</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>slid.carousel</strong></dt>
+                                <dd>
+                                This event is fired once the carousel has completed sliding.
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <section id="autosize">
+                    <h1>Autosize <small>accelerate.autosize.js</small></h1>
+                    <div class="row">
+                        <div class="clmn3">
+                            <h3>About</h3>
+                            <p>The Autosize plugin alters the behaviour of a textarea allowing it to dynamically change it's height to fit it's content. The plugin handles cut/paste commands as well as standard input.</p>
+                        </div>
+                        <div class="clmn2-3">
+                            <h3>Demo</h3>
+                            <textarea data-autosize=''></textarea>
+                            <h3>Markup</h3>
+                            <pre class="language-markup"><code class="language markup">
+
+&lt;textarea data-autosize="" &gt;&lt;/textarea &gt;
+                                                         </code></pre>
+                            <h3>Methods</h3>
+                            <dl class="dl-horizon">
+                                <dt><strong>.autoSize()</strong>  </dt>
+                                <dd>Initialises the plugin.</dd>
+                            </dl>
+                            <h3>Events</h3>
+                            <p>The autosize plugin exposes the folowing events that allow you to hook into its behaviour.</p>
+                            <dl class="dl-horizon">
+                                <dt><strong>size.autosize</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">size</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>sized.autosize</strong></dt>
+                                <dd>
+                                This event is fired once the textarea has completed resizing.
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <section id="tabs">
+                    <h1>Tabs <small>accelerate.tabs.js</small></h1>
+                    <div class="row">
+                        <div class="clmn3">
+                            <h3>About</h3>
+                            <p>The Tab plugin allows you to organize content in a structured format taking up very little space.</p>
+                        </div>
+                        <div class="clmn2-3">
+                            <h3>Demo</h3>
+                            <div data-tabs="">
+                                <ul class="tabs">
+                                    <li class="tab-active"><a href="#">tab1</a></li>
+                                    <li><a href="#">tab2</a></li>
+                                    <li><a href="#">tab3</a></li>
+                                </ul>
+                                <div class="tab-pane-active opaque">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                                <div>
+                                    Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                                </div>
+                                <div>
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                                </div>
+
+                            </div>
+                            <h3>Markup</h3>
+                            <pre class="language-markup"><code class="language markup">
+
+&lt;div data-tabs=""&gt;
+    &lt;ul class="tabs"&gt;
+        &lt;li class="tab-active"&gt;&lt;a href="#"&gt;tab1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;tab2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="tab-pane-active opaque"&gt;
+        ....
+    &lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+&lt;/div&gt;
+                                                         </code></pre>
+                            <h3>Methods</h3>
+                            <dl class="dl-horizon">
+                                <dt><strong>.tabs(index)</strong>  </dt>
+                                <dd>Initialises the plugin with an optional index <code class=" language-javascript">index</code> parameter. A zero based indicator for which tab to show.</dd>
+                            </dl>
+                            <h3>Events</h3>
+                            <p>The tabs plugin exposes the folowing events that allow you to hook into its behaviour.</p>
+                            <dl class="dl-horizon">
+                                <dt><strong>show.tabs</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">show</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>shown.tabs</strong></dt>
+                                <dd>
+                                This event is fired once the tab has completed the animation.
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <section id="dismiss">
+                    <h1>Dismiss <small>accelerate.dismiss.js</small></h1>
+                    <div class="row">
+                        <div class="clmn3">
+                            <h3>About</h3>
+                            <p>The Dimiss plugin allows you hide the nearest parent of the close trigger on click. This is especially useful for objects like message boxes.</p>
+                        </div>
+                        <div class="clmn2-3">
+                            <h3>Demo</h3>
+                            <div class="alert alert-block">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <h4 class="alert-heading">Alert block</h4>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+                            <div class="alert alert-success">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <strong>Success</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+                            <div class="alert alert-warning">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <strong>Warning</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+                            <div class="alert alert-error">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <strong>Error</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+                            <div class="alert alert-info">
+                                <a class="close" href="#" data-dismiss=".alert">x</a>
+                                <strong>Info</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+                            <h3>Markup</h3>
+                            <pre class="language-markup"><code class="language markup">
+&lt;a class="close" href="#" data-dismiss=".alert"&gt;x&lt;/a&gt;
+</code></pre>
+                            <h3>Methods</h3>
+                            <dl class="dl-horizon">
+                                <dt><strong>.tabs(index)</strong>  </dt>
+                                <dd>Initialises the plugin with an optional index <code class=" language-javascript">index</code> parameter. A zero based indicator for which tab to show.</dd>
+                            </dl>
+                            <h3>Events</h3>
+                            <p>The tabs plugin exposes the folowing events that allow you to hook into its behaviour.</p>
+                            <dl class="dl-horizon">
+                                <dt><strong>show.tabs</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">show</code> instance method is invoked.
+                                </dd>
+                                <dt><strong>shown.tabs</strong></dt>
+                                <dd>
+                                This event is fired once the tab has completed the animation.
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </div>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="clmn3-5">
+                <p>
+                    <strong class="italic">Accelerate</strong> is responsive web design boilerplate built by <a href="http://metadigital.co.uk/" rel="external" target="_blank">Metadigital</a>
+                </p>
+                <p>Excerpts of this code are based on the incredibly hard work by the good people at <a href="http://html5boilerplate.com/" rel="external" target="_blank">HTML5 Boilerplate</a>, and <a href="http://twitter.github.com/bootstrap/" rel="external" target="_blank">Twitter Bootstrap</a>. Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" rel="external" target="_blank">Apache License, Version 2.0</a>.</p>
+                <p>Icons provided by <a href="http://fortawesome.github.com/Font-Awesome/" rel="external" target="_blank">Font Awesome</a></p>
+            </div>
+            <div class="clmn5 offset5"><a class="btn" href="#" rel="up"><i class="icon-l icon-chevron-up"></i>Back to the top</a></div>
+        </div>
+    </footer>
+    <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.1.js"><\/script>')</script>
+    <!-- Plugins would normaliy be concatinated and minified -->
+    <script src="js/plugins/accelerate.featuretests.js"></script>
+    <script src="js/plugins/accelerate.accordion.js"></script>
+    <script src="js/plugins/accelerate.overlay.js"></script>
+    <script src="js/plugins/accelerate.googlemap.js"></script>
+    <script src="js/plugins/accelerate.carousel.js"></script>
+    <script src="js/plugins/accelerate.autosize.js"></script>
+    <script src="js/plugins/accelerate.tabs.js"></script>
+    <script src="js/plugins/accelerate.dismiss.js"></script>
+
+    <!-- A fix for the iOS orientationchange zoom bug -->
+    <script src="js/vendor/ios-orientationchange-fix.js"></script>
+
+    <!-- Load site specific scripts. -->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

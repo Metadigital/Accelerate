@@ -1,0 +1,42 @@
+/*
+ * MetaDigital - Accelerate responsive framework
+ *
+ * Accelerate is a framework for rapidly creating responsive websites allowing
+ * us to use the same markup for all browsers regardless of what device
+ * they are on.
+ *
+ * Portions of this css are based on the incredibley hard work that has been 
+ * done creating the HTML5 Boilerplate and Twitter Bootstrap and all credit for 
+ * that work is due to them.
+ * 
+ */
+
+/*! ==|== Accelerate 1.0.0 =======================================================
+    Author: James South - MetaDigital
+    twitter : http://twitter.com/Metadigital
+              http://twitter.com/James_M_South
+    github : https://github.com/Metadigital/Accelerate
+    Copyright (c) 2012,  MetaDigital.
+    Licensed under the Apache License v2.0.
+    ============================================================================== */
+
+/* All css files combined. This should be ran through a processor */
+
+@import url(normalize.css);
+@import url(flexo.css);
+@import url(boilerplate.css);
+@import url(code.css);
+@import url(lists-base.css);
+@import url(lists.css) screen and (min-width: 768px);
+@import url(tables.css);
+@import url(forms-base.css);
+@import url(forms.css) screen and (min-width: 480px);
+@import url(buttons.css);
+@import url(accordion.css);
+@import url(overlay.css);
+@import url(googlemap.css);
+@import url(carousel.css);
+@import url(autosize.css);
+@import url(tabs.css);
+@import url(helpers-base.css);
+@import url(helpers.css);

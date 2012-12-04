@@ -1,0 +1,8 @@
+/* ==|== Style Responsive v1.0.0 ============================================
+   Author: James South
+   Documentation specific styles.
+   ========================================================================== */
+
+@import url(docs-base.css);
+@import url(docs.css) screen and (min-width: 480px);
+@import url(font-awesome/css/font-awesome.css);
