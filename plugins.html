@@ -718,18 +718,18 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 </code></pre>
                             <h3>Methods</h3>
                             <dl class="dl-horizon">
-                                <dt><strong>.tabs(index)</strong>  </dt>
-                                <dd>Initialises the plugin with an optional index <code class=" language-javascript">index</code> parameter. A zero based indicator for which tab to show.</dd>
+                                <dt><strong>.dismiss(target)</strong>  </dt>
+                                <dd>Initialises the plugin with a target<code class=" language-javascript">target</code> parameter. A CSS seelctor indicating which taget to dismiss.</dd>
                             </dl>
                             <h3>Events</h3>
                             <p>The tabs plugin exposes the folowing events that allow you to hook into its behaviour.</p>
                             <dl class="dl-horizon">
-                                <dt><strong>show.tabs</strong></dt>
-                                <dd>This event is fired immediately when the plugins <code class="language-javascript">show</code> instance method is invoked.
+                                <dt><strong>close.dismiss</strong></dt>
+                                <dd>This event is fired immediately when the plugins <code class="language-javascript">close</code> instance method is invoked.
                                 </dd>
-                                <dt><strong>shown.tabs</strong></dt>
+                                <dt><strong>closed.dismiss</strong></dt>
                                 <dd>
-                                This event is fired once the tab has completed the animation.
+                                This event is fired once the target has completed the animation.
                             </dl>
                         </div>
                     </div>

@@ -213,6 +213,7 @@ td.is-visible {
     display: block;
     background: url(img/logo.jpg) transparent no-repeat;
 }
+
     .brand:hover {
         color: #c0c0c0;
     }
@@ -223,6 +224,11 @@ td.is-visible {
 
 .nav-list {
     list-style: none;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    padding: 20px 40px;
+    background: #fff;
 }
 
     .nav-list a {
@@ -231,4 +237,10 @@ td.is-visible {
         text-transform: lowercase;
         font-size: 1.5em;
         margin: 0.83em 0;
+        color: #454545;
+        text-decoration: none;
     }
+
+        .nav-list a:hover {
+            text-decoration: underline;
+        }
