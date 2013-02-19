@@ -1,4 +1,4 @@
-/*! ==|== Accelerate 1.0.0 =======================================================
+/*! ==|== Accelerate 1.1.0 =======================================================
  *  Author: James South - MetaDigital
  *  twitter : http://twitter.com/Metadigital
  *            http://twitter.com/James_M_South
