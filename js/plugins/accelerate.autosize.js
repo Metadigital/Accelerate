@@ -1,5 +1,5 @@
-﻿/*!
-* Accelerate AutoSize v1.0.0
+﻿/*
+* Accelerate AutoSize v1.1.2
 */
 
 /*global jQuery*/

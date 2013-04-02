@@ -1,5 +1,5 @@
-/*!
-* Accelerate GoogleMap v1.1.0
+/*
+* Accelerate GoogleMap v1.1.2
 */
 
 /*global jQuery google*/
@@ -56,8 +56,7 @@
         markers: [],
         show: function () {
 
-            var self = this,
-                transition = $.support.transition,
+            var transition = $.support.transition,
                 showEvent = $.Event("show.googlemap.accelerate"),
                 $element = this.$element,
                 element = $element[0],
@@ -94,9 +93,7 @@
 
             // Create a marker
             var markerOptions = {
-                position: options.marker.lat
-                    ? new google.maps.LatLng(options.marker.lat, options.marker.lng)
-                    : mapOptions.center,
+                position: options.marker.lat ? new google.maps.LatLng(options.marker.lat, options.marker.lng) : mapOptions.center,
                 map: this.map,
                 title: options.marker.title
             };
@@ -145,6 +142,7 @@
         resize: function () {
 
             var self = this,
+                center = self.map.getCenter(),
                 doResize = function () {
 
                     var resizedEvent = $.Event("resized.googlemap.accelerate"),
@@ -158,8 +156,9 @@
                         self.$element.addClass("map-off");
                     }
 
-                    // Shift the map to the position of the marker.
-                    self.map.panTo(new google.maps.LatLng(self.options.center.lat, self.options.center.lng));
+                    google.maps.event.trigger(self.map, "resize");
+
+                    self.map.setCenter(center);
 
                     window.setTimeout(function () {
 
@@ -176,7 +175,7 @@
                 };
 
             // Debounce the resize event.
-            var delay = self.options.debounce ? 25 : 0,
+            var delay = self.options.debounce ? 50 : 0,
                 debouncedResize = debounce(doResize, delay);
 
             debouncedResize();
@@ -235,7 +234,7 @@
             icon: null
         },
         disableDefaultUI: false,
-        debounce: true
+        debounce: false
     };
 
     // Set the public constructor.

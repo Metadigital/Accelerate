@@ -1,6 +1,6 @@
-/*! ==|== Accelerate 1.0.0 =======================================================
+/*! ==|== Accelerate 1.1.2 =======================================================
  *  Author: James South - MetaDigital
- *  twitter : http://twitter.com/Metadigital
+ *  twitter : http://twitter.com/MetadigitalUK
  *            http://twitter.com/James_M_South
  *  github : https://github.com/Metadigital/Accelerate
  *  Copyright (c) 2012,  MetaDigital.
@@ -9,7 +9,7 @@
  */
 
 /*!
-* Accelerate Feature Tests v1.0.0
+* Accelerate Feature Tests v1.1.2
 */
 
 /*global jQuery*/

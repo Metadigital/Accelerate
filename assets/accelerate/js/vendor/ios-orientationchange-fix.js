@@ -1,5 +1,4 @@
 ﻿/*! A fix for the iOS orientationchange zoom bug.
- https://github.com/scottjehl/iOS-Orientationchange-Fix
  Script by @scottjehl, rebound by @wilto.
  MIT / GPLv2 License.
 */

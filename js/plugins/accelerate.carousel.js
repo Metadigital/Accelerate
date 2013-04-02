@@ -1,5 +1,5 @@
-/*!
-* Accelerate Carousel v1.0.0
+/*
+* Accelerate Carousel v1.1.2
 */
 
 /*global jQuery*/

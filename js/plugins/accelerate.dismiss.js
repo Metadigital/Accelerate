@@ -1,5 +1,5 @@
-﻿/*!
-* Accelerate Dismiss v1.0.0
+﻿/*
+* Accelerate Dismiss v1.1.2
 */
 
 /*global jQuery*/

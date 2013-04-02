@@ -1,5 +1,5 @@
-/*!
-* Accelerate tabs v1.0.0
+/*
+* Accelerate tabs v1.1.2
 */
 
 /*global jQuery*/
