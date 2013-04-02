@@ -1,6 +1,6 @@
-/*! ==|== Accelerate 1.1.0 =======================================================
+/*! ==|== Accelerate 1.1.2 =======================================================
  *  Author: James South - MetaDigital
- *  twitter : http://twitter.com/Metadigital
+ *  twitter : http://twitter.com/MetadigitalUK
  *            http://twitter.com/James_M_South
  *  github : https://github.com/Metadigital/Accelerate
  *  Copyright (c) 2012,  MetaDigital.
@@ -9,7 +9,7 @@
  */
 
 /*!
-* Accelerate Feature Tests v1.0.0
+* Accelerate Feature Tests v1.1.2
 */
 
 /*global jQuery*/
@@ -79,8 +79,8 @@
     };
 
 }(jQuery));
-/*!
-* Accelerate Accordion v1.0.0
+/*
+* Accelerate Accordion v1.1.2
 */
 
 /*global jQuery*/
@@ -226,8 +226,8 @@
 
         });
     });
-}(jQuery));/*!
-* Accelerate Overlay v1.0.0
+}(jQuery));/*
+* Accelerate Overlay v1.1.2
 */
 
 /*global jQuery*/
@@ -621,8 +621,8 @@
 
     });
 
-}(jQuery));/*!
-* Accelerate GoogleMap v1.0.0
+}(jQuery));/*
+* Accelerate GoogleMap v1.1.2
 */
 
 /*global jQuery google*/
@@ -888,8 +888,8 @@
 }(jQuery));
 
 
-/*!
-* Accelerate Carousel v1.0.0
+/*
+* Accelerate Carousel v1.1.2
 */
 
 /*global jQuery*/
@@ -1165,8 +1165,8 @@
 
     });
 
-}(jQuery));/*!
-* Accelerate AutoSize v1.0.0
+}(jQuery));/*
+* Accelerate AutoSize v1.1.2
 */
 
 /*global jQuery*/
@@ -1306,8 +1306,8 @@
         });
     });
 
-}(jQuery));/*!
-* Accelerate tabs v1.0.0
+}(jQuery));/*
+* Accelerate tabs v1.1.2
 */
 
 /*global jQuery*/
@@ -1443,8 +1443,8 @@
 
     });
 
-}(jQuery));/*!
-* Accelerate Dismiss v1.0.0
+}(jQuery));/*
+* Accelerate Dismiss v1.1.2
 */
 
 /*global jQuery*/

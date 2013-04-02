@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>Click to compile:</h3>
+<h2>CSS</h2>
+<p>
+    <a class="btn" href="/css.axd?path=accelerate.css" target="_blank">Accelerate</a>
+    <a class="btn" href="/css.axd?path=accelerate-legacy.css" target="_blank">Accelerate Legacy</a>
+</p>
+
+<h2>JS</h2>
+<p>
+    <a class="btn" href="/js.axd?path=accelerate.featuretests.js|accelerate.accordion.js|accelerate.overlay.js|accelerate.googlemap.js|accelerate.carousel.js|accelerate.autosize.js|accelerate.tabs.js|accelerate.dismiss.js" target="_blank">Accelerate</a>
+</p>

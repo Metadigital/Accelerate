@@ -1,0 +1,46 @@
+/* ==|== Accordian 1.0 ==========================================================
+   Author: James South - MetaDigital
+   ============================================================================== */
+
+.acc {
+    border: solid 1px #c0c0c0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}
+
+.acc-head, .acc-body {
+    padding: 0 8px;
+}
+
+.acc-head {
+    padding: 8px;
+    -moz-border-radius: 2px 2px 1px 1px;
+    -webkit-border-radius: 2px 2px 1px 1px;
+    border-radius: 2px 2px 1px 1px;
+    cursor: pointer;
+    font-weight: bold;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+    .acc-head:hover {
+        background: #ebebeb;
+    }
+
+.cllps {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 0;
+}
+
+.xpnd {
+    border-top: solid 1px #c0c0c0;
+    height: auto;
+}

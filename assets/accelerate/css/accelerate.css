@@ -11,12 +11,12 @@
  * 
  */
 
-/*! ==|== Accelerate 1.1.0 =======================================================
+/*! ==|== Accelerate 1.1.2 =======================================================
     Author: James South - MetaDigital
-    twitter : http://twitter.com/Metadigital
+    twitter : http://twitter.com/MetadigitalUK
               http://twitter.com/James_M_South
     github : https://github.com/Metadigital/Accelerate
-    Copyright (c) 2012,  MetaDigital.
+    Copyright (c),  MetaDigital.
     Licensed under the Apache License v2.0.
     ============================================================================== */
 
@@ -761,7 +761,7 @@ Portrait phone viewport to Landscape phone < 767px
     /* Manages width in a single place */
     width: 1140px;
 }
-/* ==|== Boilerplate v1.0.0 =================================================
+/* ==|== Boilerplate v1.1.2 =================================================
    Author: James South - MetaDigital
    ========================================================================== */
 
@@ -979,7 +979,7 @@ img {
     padding-left: .5em;
 }
 
-/* ==|== Code v1.0.0 ========================================================
+/* ==|== Code v1.1.2 ========================================================
    Author: James South - MetaDigital
    ========================================================================== */
 
@@ -1110,7 +1110,7 @@ code[class*="language-"] {
     font-style: italic;
 }
 
-/* ==|== Lists Base 1.0.0 =======================================================
+/* ==|== Lists Base 1.1.2 =======================================================
    Author: James South - MetaDigital
    ============================================================================== */
 
@@ -1187,7 +1187,7 @@ ol.colored {
     }
 
 @media  screen and (min-width: 768px){
-/* ==|== Lists 1.0.0 ============================================================
+/* ==|== Lists 1.1.2 ============================================================
    Author: James South - MetaDigital
    ============================================================================== */
 
@@ -1211,7 +1211,7 @@ ol.colored {
 }
 
 }
-/* ==|== Tables 1.0.0 ===========================================================
+/* ==|== Tables 1.1.2 ===========================================================
    Author: James South - MetaDigital
    ============================================================================== */
 
@@ -1282,7 +1282,7 @@ table {
   background-color: #f6f6f6;
 }
 
-/* ==|== Forms Base 1.0.0 =======================================================
+/* ==|== Forms Base 1.1.2 =======================================================
    Author: James South - MetaDigital
    ============================================================================== */
 
@@ -1308,7 +1308,7 @@ legend {
 /* ie7 and ie8 put the padding above the legend */
 
 fieldset {
-    padding-top/*\**/: 0\9;
+    padding-top /*\**/: 0\9;
 }
 
 legend {
@@ -1332,7 +1332,12 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"],
+input[type="range"],
 .no-edit-input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
     font-family: inherit;
     color: #666;
     padding: 4px;
@@ -1348,6 +1353,20 @@ input[type="color"],
     -moz-transition: border linear 0.3s, box-shadow linear 0.3s;
     -o-transition: border linear 0.3s, box-shadow linear 0.3s;
     transition: border linear 0.3s, box-shadow linear 0.3s;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* This targets IE10+ but we want it to */
+    input[type="range"] {
+        border: none;
+        box-shadow: none!important;
+    }
+}
+
+/*http://bricss.net/post/11230266445/css-hack-to-target-opera*/
+x:-o-prefocus, input[type="range"] {
+    border: none;
+    box-shadow: none!important;
 }
 
     /* focus */
@@ -1366,6 +1385,7 @@ input[type="color"],
     input[type="search"]:focus,
     input[type="tel"]:focus,
     input[type="color"]:focus,
+    input[type="range"]:focus,
     input.focus,
     textarea.focus,
     .no-edit-input:focus {
@@ -1377,18 +1397,18 @@ input[type="color"],
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
     }
 
-    /* disabled */
-    input[disabled],
-    select[disabled],
-    textarea[disabled],
-    input[readonly],
-    select[readonly],
-    textarea[readonly] {
-        cursor: not-allowed;
-        background-color: #ebebeb;
-        border-color: #c0c0c0;
-        color: #c0c0c0;
-    }
+/* disabled */
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+    cursor: not-allowed;
+    background-color: #ebebeb;
+    border-color: #c0c0c0;
+    color: #c0c0c0;
+}
 
 /* Standard layout */
 
@@ -1418,24 +1438,37 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"],
+input[type="range"],
 textarea,
 .no-edit-input {
-    width: 210px;
+    max-width: 210px;
+    width: 100%;
 }
 
-    input[type="radio"],
-    input[type="checkbox"] {
-        /* Might just move this further down the file */
-        display: inline-block!important;
-        margin: 3px 3px 3px 0!important;
-        width: 13px!important;
-    }
+input[type="color"] {
+    -webkit-padding-start: 0;
+    -webkit-padding-end: 0;
+    -webkit-padding-before: 0;
+    -webkit-padding-after: 0;
+    max-width: 105px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    /* Might just move this further down the file */
+    display: inline-block!important;
+    margin: 3px 3px 3px 0!important;
+    width: 13px!important;
+}
 
 /* both|horizontal|vertical|none */
 textarea {
+    width: auto;
+    min-width: 210px;
+    max-width: 100%;
     height: auto;
     resize: both;
-    min-height: 42px;
+    min-height: 84px;
 }
 
     textarea.horizon {
@@ -1456,7 +1489,9 @@ textarea {
 }
 
 select {
-    width: 220px;
+    max-width: 210px;
+    width: 100%;
+    *width: 220px;
     border: 1px solid #c0c0c0;
 }
 
@@ -1548,10 +1583,11 @@ form span.error {
     background: linear-gradient(to bottom, rgba(239,239,239,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
     margin: 1em 0;
     padding: 1em 1em 1em 0;
-    white-space:nowrap;
+    white-space: nowrap;
 }
+
 @media  screen and (min-width: 480px){
-/* ==|== Forms 1.0.0 ============================================================
+/* ==|== Forms 1.1.2 ============================================================
    Author: James South - MetaDigital
    ============================================================================== */
 
@@ -1615,7 +1651,7 @@ form {
     white-space:nowrap;
 }
 }
-/* ==|== Buttons v1.0.0 =====================================================
+/* ==|== Buttons v1.1.2 =====================================================
    Author: James South - MetaDigital
    ========================================================================== */
 
@@ -1663,7 +1699,7 @@ form {
         *margin-left: .3em;
         *zoom: 1;
         /* disable border */
-        *filter: chroma(color=#000000)\9;
+        *filter: chroma(color=#000000);
     }
 
         .btn:first-child {
@@ -1805,7 +1841,7 @@ form {
     height: auto;
 }
 
-/* ==|== Overlay 1.0.0 ==========================================================
+/* ==|== Overlay 1.1.2 ==========================================================
    Author: James South - MetaDigital
    ============================================================================== */
 
@@ -1934,7 +1970,7 @@ form {
 
 
 @media  screen and (max-width: 767px){
-/* ==|== Overlay 1.0.0 ==========================================================
+/* ==|== Overlay 1.1.2 ==========================================================
    Author: James South - MetaDigital
    ============================================================================== */
 
@@ -2220,7 +2256,7 @@ form {
     z-index: 3;
 }
 
-/* ==|== Autosize 1.0 ==========================================================
+/* ==|== Autosize 1.1.2 =========================================================
    Author: James South - MetaDigital
    ============================================================================== */
 
@@ -2232,7 +2268,7 @@ form {
     transition: border linear 0.3s, box-shadow linear 0.3s, height 0.3s linear;
 }
 
-/* ==|== Tabs Map 1.0.0 =========================================================
+/* ==|== Tabs Map 1.1.2 =========================================================
    Author: James South - MetaDigital
    ============================================================================== */
 [data-tabs] {
@@ -2310,7 +2346,7 @@ form {
             display: block;
         }
 
-/* ==|== Helpers Base 1.0.0 =====================================================
+/* ==|== Helpers Base 1.1.2 =====================================================
    Author: James South - MetaDigital
    ============================================================================== */
 
@@ -2323,9 +2359,7 @@ form {
  *
  * Detailed information about this CSS: h5bp.com/css
  *
- * ==|== Helpers v1.0.0 =====================================================
-   Please define your styles before this section.
-   ========================================================================== */
+ */
 
 /* For image replacement */
 .ir {
@@ -2340,7 +2374,7 @@ form {
         content: "";
         display: block;
         width: 0;
-        height: 100%;
+        height: 150%;
     }
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */
@@ -2427,24 +2461,9 @@ form {
     display: none !important;
 }
 
-
-
-/* ==|== Helpers 1.0.0 ==========================================================
+/* ==|== Helpers 1.1.2 ==========================================================
    Author: James South - MetaDigital
    ============================================================================== */
-
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- *
- * Detailed information about this CSS: h5bp.com/css
- *
- * ==|== Helpers v1.0.0 =====================================================
-   Please define your styles before this section.
-   ========================================================================== */
 
 /* ==|== media queries ======================================================
    Up to landscape phone: viewport < 480px
@@ -2509,3 +2528,4 @@ Landscape phone to small desktop & portrait tablet viewport < 768px
         display: none !important;
     }
 }
+

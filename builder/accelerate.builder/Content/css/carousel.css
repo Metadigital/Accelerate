@@ -1,0 +1,193 @@
+﻿/* ==|== Carousel 1.0 ==========================================================
+   Author: James South - MetaDigital
+   ============================================================================== */
+
+.carousel {
+    position: relative;
+    margin-bottom: 1em;
+    /* Makes the fade look nicer*/
+    background: #222;
+}
+
+.carousel-inner {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.carousel .carousel-item {
+    display: none;
+    position: relative;
+    -webkit-transition: 0.7s ease-in-out left;
+    -moz-transition: 0.7s ease-in-out left;
+    -o-transition: 0.7s ease-in-out left;
+    transition: 0.7s ease-in-out left;
+}
+
+.carousel.carousel-slide .carousel-item {
+    -webkit-transition: 0.7s ease-in-out left;
+    -moz-transition: 0.7s ease-in-out left;
+    -o-transition: 0.7s ease-in-out left;
+    transition: 0.7s ease-in-out left;
+}
+
+.carousel .carousel-item > img {
+    display: block;
+    width: 100%;
+}
+
+/* Next last items */
+.carousel .carousel-active,
+.carousel .next,
+.carousel .prev {
+    display: block;
+}
+
+.carousel .carousel-active {
+    left: 0;
+}
+
+.carousel .next,
+.carousel .prev {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.carousel .next {
+    left: 100%;
+}
+
+.carousel .prev {
+    left: -100%;
+}
+
+    .carousel .next.left,
+    .carousel .prev.right {
+        left: 0;
+    }
+
+.carousel .carousel-active.left {
+    left: -100%;
+}
+
+.carousel .carousel-active.right {
+    left: 100%;
+}
+
+.carousel-control,
+.carousel-control:visited {
+    position: absolute;
+    top: 40%;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 30px;
+    color: #fff;
+    color: rgba(255, 255, 255, 0.50);
+    text-decoration: none;
+    text-align: center;
+    background-color: #222;
+    background-color: rgba(0, 0, 0, 0.50);
+    border: 3px solid #fff;
+    border: 3px solid rgba(255, 255, 255, 0.50);
+    -moz-border-radius: 23px;
+    -webkit-border-radius: 23px;
+    border-radius: 23px;
+}
+
+    .carousel-control.right {
+        left: auto;
+        right: 15px;
+    }
+
+    .carousel-control,
+    .carousel-control:visited,
+    .carousel-control:focus {
+        outline: 0;
+    }
+
+        .carousel-control:hover {
+            background-color: #222;
+            background: rgba(0, 0, 0, .75);
+            border-color: #fff;
+            border-color: rgba(255, 255, 255, 0.90);
+            color: #fff;
+            color: rgba(255, 255, 255, 0.90);
+            text-decoration: none;
+            -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.75);
+        }
+
+/* Stoopid ie7 */
+.carousel-control {
+    *color: #fff!important;
+}
+
+.carousel-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    padding: 10px 15px 5px;
+    background: #222;
+    background: rgba(0, 0, 0, .75);
+}
+
+.carousel-caption {
+    *padding-bottom: 1em;
+}
+
+.carousel-caption h4,
+.carousel-caption p {
+    color: #fff;
+}
+
+/* Fade version*/
+.carousel.carousel-fade .carousel-item {
+    -webkit-transition: opacity 1s linear;
+    -moz-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+    transition: opacity 1s linear;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+
+.carousel.carousel-fade .carousel-active {
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+    .carousel.carousel-fade .carousel-active.left,
+    .carousel.carousel-fade .carousel-active.right {
+        left: 0;
+        -moz-opacity: 0;
+        opacity: 0;
+        z-index: 2;
+    }
+
+.carousel.carousel-fade .carousel-item.next,
+.carousel.carousel-fade .carousel-item.prev {
+    left: 0;
+    z-index: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+.carousel.carousel-fade .carousel-item.carousel-active {
+    position: relative;
+}
+
+.carousel.carousel-fade .carousel-control,
+.carousel.carousel-fade .carousel-control:visited {
+    z-index: 3;
+}
